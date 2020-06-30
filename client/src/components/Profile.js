@@ -2,17 +2,25 @@ import React from 'react';
 import { AuthConsumer } from '../providers/AuthProvider';
 import { Container, Divider } from 'semantic-ui-react';
 
+
 class Profile extends React.Component {
+
+export default class Profile extends React.Component {
+
   state = {editing: false, formValues: { name: "", email: ""} };
 
   componentDidMount() {
     //AuthProvider has current user information.  We use that to get what we need
     const { auth: {user: {name, email}}} = this.props
+
     this.setState({ formValues: { name, email } });
   }
 
   render (){
     const { formValues: {name, email}} = this.state
+  }
+
+  render (){
     return (
       <Container>
         <Divider />
@@ -31,3 +39,9 @@ const ConnectedProfile = (props) => (
 )
 
 export default ConnectedProfile;
+=======
+      </Container>
+    )
+  }
+}
+

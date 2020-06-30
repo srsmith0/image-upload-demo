@@ -12,10 +12,13 @@ class Profile extends React.Component {
   }
 
   render (){
+    const { formValues: {name, email}} = this.state
     return (
       <Container>
         <Divider />
         <h1>New Profile</h1>
+        <h1>Name: {name}</h1>
+        <h1>Email: {email}</h1>
       </Container>
     )
   }

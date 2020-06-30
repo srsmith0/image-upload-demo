@@ -7,11 +7,12 @@ class Register extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password, passwordConfirmation } = this.state;
+    const { email, password, passwordConfirmation, name } = this.state;
     const { auth: { handleRegister, }, history, } = this.props;
 
     if (password === passwordConfirmation)
-      handleRegister({ email, password, passwordConfirmation, }, history);
+    //need to add name to this, but it wont recognize it
+      handleRegister({ email, password, passwordConfirmation, name }, history);
     else
       alert('Passwords Do Not Match!');
   };
